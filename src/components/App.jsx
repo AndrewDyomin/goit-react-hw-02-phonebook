@@ -18,8 +18,8 @@ export class App extends Component {
 
 createContact = values => {
     const targetContact = this.state.contacts
-      .map((cont) => cont.name)
-      .includes(values.name);
+      .map((cont) => cont.name.toLowerCase())
+      .includes(values.name.toLowerCase());
 
     if (targetContact) {
       alert(`${values.name} is already in contacts`);
@@ -53,7 +53,7 @@ handleDelete = contactId => {
       <GlobalStyle />
       <AddContact create={this.createContact} />
       <div>
-        <Filter onFilter={this.changeFilter}/>
+        <Filter onFilter={this.changeFilter} initValue={this.state.filter}/>
         <ContactList actual={actualContacts} onDelete={this.handleDelete}/>
       </div>
     </>

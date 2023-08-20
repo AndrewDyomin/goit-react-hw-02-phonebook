@@ -1,6 +1,6 @@
 import { Container, FilterItem,} from "./Filter.styled";
 
-export const Filter = ({ onFilter }) => {
+export const Filter = ({ onFilter, initValue }) => {
     return (
         <Container>
             <FilterItem>
@@ -12,6 +12,7 @@ export const Filter = ({ onFilter }) => {
                 id="filter"
                 name="filter" 
                 placeholder="Enter name" 
+                value={initValue}
                 onChange={ (searchValue) => {onFilter(searchValue)}}/>
             </FilterItem>
         </Container>
