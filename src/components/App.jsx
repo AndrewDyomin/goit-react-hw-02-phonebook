@@ -51,10 +51,8 @@ handleDelete = contactId => {
     return (
     <>
       <GlobalStyle />
-      <h1>Contacts</h1>
       <AddContact create={this.createContact} />
       <div>
-        <h2>Contacts</h2>
         <Filter onFilter={this.changeFilter}/>
         <ContactList actual={actualContacts} onDelete={this.handleDelete}/>
       </div>
