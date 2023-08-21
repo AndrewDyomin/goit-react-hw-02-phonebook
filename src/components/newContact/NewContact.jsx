@@ -11,8 +11,9 @@ export const AddContact = ({ create }) => {
                 number: '',
             }}
             
-            onSubmit={ (values) => {
+            onSubmit={ (values,{resetForm}) => {
                 create(values);
+                resetForm();
             }}
             >
             <Form>
